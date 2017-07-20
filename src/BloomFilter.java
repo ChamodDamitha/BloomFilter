@@ -34,6 +34,10 @@ public class BloomFilter<E> {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+
+
+        System.out.println("sizeOfBitSet : " + sizeOfBitSet); //TODO: added only for testing
+        System.out.println("noOfHashFunctions : " + noOfHashFunctions); //TODO: added only for testing
     }
 
     /**
@@ -79,7 +83,7 @@ public class BloomFilter<E> {
             messageDigest.update(salt);
             digest = messageDigest.digest(data);
 
-            System.out.println("digest " + messageDigest.toString()); //TODO: added only for testing
+            System.out.println("digest " + digest.toString()); //TODO: added only for testing
 
 //          jump from 4 by 4 to create some randomness
             for(int i = 0; i < digest.length / 4 ; i++){
@@ -89,6 +93,7 @@ public class BloomFilter<E> {
                     hash <<= 8;
 //                  the least significant byte of digest[j] is taken
                     hash |= ((int)digest[j]) & 0xff;
+
 
                     hashValues[completedHashes] = hash;
                     completedHashes++;
@@ -120,14 +125,18 @@ public class BloomFilter<E> {
      * Adds a value to the bloom filter
      * @param data
      */
-    public void add(E data){
+    public void insert(E data){
         byte[] dataBytes = getBytes(data);
         int[] bitIndices = getHashValues(dataBytes, this.noOfHashFunctions);
 
 //      set the relevant bits in the array to 1
         for (int i : bitIndices){
             bitSet.set(getBitIndex(i));
+
+            System.out.println("bit index " + getBitIndex(i)); //TODO : added only for testing
         }
+
+        insertedNoOfElements++;
     }
 
     /**
@@ -146,5 +155,22 @@ public class BloomFilter<E> {
             }
         }
         return true;
+    }
+
+    /**
+     * calculate the false positive probability based on the expected number of elements inserted
+     * @return the probability of false positives
+     */
+    public double getFalsePositiveProbability(){
+//        p = (1 - e ^ (-k * n / m)) ^ k
+        return Math.pow(1 - Math.exp(-noOfHashFunctions * expectNoOfElements / (double)sizeOfBitSet), noOfHashFunctions);
+    }
+
+    /**
+     * Return the inserted number of elements to the bloom filter
+     * @return
+     */
+    public int getInsertedNoOfElements(){
+        return this.insertedNoOfElements;
     }
 }
