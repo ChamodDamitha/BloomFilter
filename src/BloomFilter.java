@@ -1,9 +1,11 @@
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.BitSet;
 
 /**
  * Created by chamod on 7/19/17.
  */
-public class BloomFilter {
+public class BloomFilter<E> {
 
 //  bit array to keep track of hashed values
     private BitSet bitSet;
@@ -11,6 +13,8 @@ public class BloomFilter {
     private int expectNoOfElements;
     private int insertedNoOfElements;
     private int noOfHashFunctions;
+
+    private MessageDigest messageDigest;
 
     /**
      *
@@ -23,6 +27,13 @@ public class BloomFilter {
         this.noOfHashFunctions = noOfHashFunctions;
         this.sizeOfBitSet = sizeOfBitSet;
         this.bitSet = new BitSet(sizeOfBitSet);
+
+//        setting MD5 digest function to generate hashes
+        try {
+            this.messageDigest = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -47,6 +58,53 @@ public class BloomFilter {
      */
     private int getBitIndex(int hash){
         return Math.abs(hash % sizeOfBitSet);
+    }
+
+
+    /**
+     * Compute a set of different int values for a byte array of data
+     * @param data is the array of bytes for which the hash values are needed
+     * @param noOfHashes is the number of hash values needed
+     * @return an int array of hash values
+     */
+    private int[] getHashValues(byte[] data, int noOfHashes){
+        int[] hashValues = new int[noOfHashes];
+        byte salt = 0;
+        int completedHashes = 0;
+        byte[] digest;
+        int hash;
+
+//      Loop until the number of hash values are completed
+        while(completedHashes < noOfHashes) {
+            messageDigest.update(salt);
+            digest = messageDigest.digest(data);
+
+            System.out.println("digest " + messageDigest.toString()); //TODO: added only for testing
+
+//          jump from 4 by 4 to create some randomness
+            for(int i = 0; i < digest.length / 4 ; i++){
+                hash = 1;
+                for(int j = 4 * i; j < (4 * i + 4); j++){
+//                  multiply the hash by 2^8
+                    hash <<= 8;
+//                  the least significant byte of digest[j] is taken
+                    hash |= ((int)digest[j]) & 0xff;
+
+                    hashValues[completedHashes] = hash;
+                    completedHashes++;
+
+                    if(completedHashes == noOfHashes){
+                        return hashValues;
+                    }
+                }
+            }
+
+//          salt is incremented to obtain new values for the digest
+            salt++;
+
+        }
+
+        return hashValues;
     }
 
 
