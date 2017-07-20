@@ -28,10 +28,12 @@
       <file leaf-file-name="BloomFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BloomFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="64" column="69" lean-forward="false" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
+            <state relative-caret-position="755">
+              <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3926#3927#0" expanded="true" />
+                <element signature="e#3975#3976#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,26 +65,9 @@
       <file leaf-file-name="BitSet.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/Softwares/jdk1.8.0_131/src.zip!/java/util/BitSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
-              <folding>
-                <element signature="e#0#41338#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#3344#3345#0" expanded="false" />
-                <element signature="e#3400#3401#0" expanded="false" />
-                <element signature="e#5056#5057#0" expanded="false" />
-                <element signature="e#5112#5113#0" expanded="false" />
-                <element signature="e#7974#7975#0" expanded="false" />
-                <element signature="e#8035#8036#0" expanded="false" />
-                <element signature="e#10900#10901#0" expanded="false" />
-                <element signature="e#10955#10956#0" expanded="false" />
-                <element signature="e#29044#29045#0" expanded="false" />
-                <element signature="e#29082#29083#0" expanded="false" />
-                <element signature="e#34814#34815#0" expanded="false" />
-                <element signature="e#34865#34866#0" expanded="false" />
-                <element signature="e#40537#40538#0" expanded="false" />
-                <element signature="e#40586#40587#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="141">
+              <caret line="613" column="38" lean-forward="false" selection-start-line="613" selection-start-column="32" selection-end-line="613" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -612,12 +597,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500454253578</updated>
       <workItem from="1500454256872" duration="4973000" />
-      <workItem from="1500520365137" duration="10736000" />
+      <workItem from="1500520365137" duration="11676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15709000" />
+    <option name="totallyTimeSpent" value="16649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="71" y="-5" width="1849" height="1085" extended-state="6" />
@@ -676,24 +661,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
           <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#41338#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3344#3345#0" expanded="false" />
-            <element signature="e#3400#3401#0" expanded="false" />
-            <element signature="e#5056#5057#0" expanded="false" />
-            <element signature="e#5112#5113#0" expanded="false" />
-            <element signature="e#7974#7975#0" expanded="false" />
-            <element signature="e#8035#8036#0" expanded="false" />
-            <element signature="e#10900#10901#0" expanded="false" />
-            <element signature="e#10955#10956#0" expanded="false" />
-            <element signature="e#29044#29045#0" expanded="false" />
-            <element signature="e#29082#29083#0" expanded="false" />
-            <element signature="e#34814#34815#0" expanded="false" />
-            <element signature="e#34865#34866#0" expanded="false" />
-            <element signature="e#40537#40538#0" expanded="false" />
-            <element signature="e#40586#40587#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -703,6 +671,8 @@
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,31 +682,6 @@
         <state relative-caret-position="110">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Softwares/jdk1.8.0_131/src.zip!/java/util/BitSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#41338#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3344#3345#0" expanded="false" />
-            <element signature="e#3400#3401#0" expanded="false" />
-            <element signature="e#5056#5057#0" expanded="false" />
-            <element signature="e#5112#5113#0" expanded="false" />
-            <element signature="e#7974#7975#0" expanded="false" />
-            <element signature="e#8035#8036#0" expanded="false" />
-            <element signature="e#10900#10901#0" expanded="false" />
-            <element signature="e#10955#10956#0" expanded="false" />
-            <element signature="e#29044#29045#0" expanded="false" />
-            <element signature="e#29082#29083#0" expanded="false" />
-            <element signature="e#34814#34815#0" expanded="false" />
-            <element signature="e#34865#34866#0" expanded="false" />
-            <element signature="e#40537#40538#0" expanded="false" />
-            <element signature="e#40586#40587#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,12 +704,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Softwares/jdk1.8.0_131/src.zip!/java/util/BitSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="613" column="38" lean-forward="false" selection-start-line="613" selection-start-column="32" selection-end-line="613" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BloomFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="64" column="69" lean-forward="false" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
+        <state relative-caret-position="755">
+          <caret line="150" column="0" lean-forward="true" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3926#3927#0" expanded="true" />
+            <element signature="e#3975#3976#0" expanded="true" />
           </folding>
         </state>
       </provider>

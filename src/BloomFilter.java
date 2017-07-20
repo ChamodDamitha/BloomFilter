@@ -37,7 +37,7 @@ public class BloomFilter<E> {
     }
 
     /**
-     *
+     * Create a bloom filter by specifying the expected number of elements and the false positive probability
      * @param expectNoOfElements is the expected number of insertions
      * @param falsePositiveProbability is the false probability of the bloom filter
      */
@@ -107,5 +107,44 @@ public class BloomFilter<E> {
         return hashValues;
     }
 
+    /**
+     * return a byte array for input data of type E
+     * @param data
+     * @return a byte array
+     */
+    private byte[] getBytes(E data){
+        return data.toString().getBytes();
+    }
 
+    /**
+     * Adds a value to the bloom filter
+     * @param data
+     */
+    public void add(E data){
+        byte[] dataBytes = getBytes(data);
+        int[] bitIndices = getHashValues(dataBytes, this.noOfHashFunctions);
+
+//      set the relevant bits in the array to 1
+        for (int i : bitIndices){
+            bitSet.set(getBitIndex(i));
+        }
+    }
+
+    /**
+     * Check whether the queried data is contained within the bloom filter
+     * @param data is the data to be checked for the membership
+     * @return {@code true} if the data may contain, {@code false} if the data does not contain
+     */
+    public boolean mayContain(E data){
+        byte[] dataBytes = getBytes(data);
+        int[] bitIndices = getHashValues(dataBytes, this.noOfHashFunctions);
+
+        for(int i : bitIndices){
+//          if at least one bit is set to 0, return 0
+            if(!bitSet.get(getBitIndex(i))){
+                return false;
+            }
+        }
+        return true;
+    }
 }
