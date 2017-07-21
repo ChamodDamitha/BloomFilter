@@ -36,8 +36,8 @@ public class BloomFilter<E> {
         }
 
 
-        System.out.println("sizeOfBitSet : " + sizeOfBitSet); //TODO: added only for testing
-        System.out.println("noOfHashFunctions : " + noOfHashFunctions); //TODO: added only for testing
+//        System.out.println("sizeOfBitSet : " + sizeOfBitSet); //TODO: added only for testing
+//        System.out.println("noOfHashFunctions : " + noOfHashFunctions); //TODO: added only for testing
     }
 
     /**
@@ -83,7 +83,7 @@ public class BloomFilter<E> {
             messageDigest.update(salt);
             digest = messageDigest.digest(data);
 
-            System.out.println("digest " + digest.toString()); //TODO: added only for testing
+//            System.out.println("digest " + digest.toString()); //TODO: added only for testing
 
 //          jump from 4 by 4 to create some randomness
             for(int i = 0; i < digest.length / 4 ; i++){
@@ -133,7 +133,7 @@ public class BloomFilter<E> {
         for (int i : bitIndices){
             bitSet.set(getBitIndex(i));
 
-            System.out.println("bit index " + getBitIndex(i)); //TODO : added only for testing
+//            System.out.println("bit index " + getBitIndex(i)); //TODO : added only for testing
         }
 
         insertedNoOfElements++;
