@@ -15,8 +15,12 @@
 * specific language governing permissions and limitations
 * under the License.
 */
-public class Main {
-    public static void main(String[] args) {
+
+import org.junit.Test;
+
+public class BloomFilterTest {
+    @Test
+    public void testBloomFilter(){
         BloomFilter<Integer> bloomFilter = BloomFilter.createBloomFilter(10000000, 0.1);
 
         for (int i = 0; i < 100; i++){
