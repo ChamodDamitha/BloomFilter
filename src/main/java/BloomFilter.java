@@ -16,6 +16,8 @@
 * under the License.
 */
 
+import org.apache.log4j.Logger;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.BitSet;
@@ -25,6 +27,8 @@ import java.util.BitSet;
  * @param <E> is the type of data to be stored
  */
 public class BloomFilter<E> {
+
+    private static final Logger LOG = Logger.getLogger(BloomFilter.class);
 
 //  bit array to keep track of hashed values
     private BitSet bitSet;
@@ -36,7 +40,6 @@ public class BloomFilter<E> {
     private MessageDigest messageDigest;
 
     /**
-     *
      * @param sizeOfBitSet is the size of bit array
      * @param expectNoOfElements is the expected number of insertions
      * @param noOfHashFunctions is the number of hash functions to be used
@@ -51,7 +54,7 @@ public class BloomFilter<E> {
         try {
             this.messageDigest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+            LOG.error("Error while ....'" + "' in Siddhi app , " + e.getMessage(), e);
         }
 
 
